@@ -22,7 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-// zero-install
+# zero-install
 .yarn/*
 !.yarn/cache
 !.yarn/patches
@@ -30,3 +30,6 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# api key
+.env
