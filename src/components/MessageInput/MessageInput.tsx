@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Col, Input, Row } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
+import { useMutation } from 'react-query';
 import createChatApi from '../../api/createChat';
 
 const { TextArea } = Input;
 
-const MessageInput = () => {
-  const [userMessage, setUserMessage] = useState<string>('');
+interface Props {
+  userMessage: string;
+  handleTypingMessage: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+}
 
-  const handleTypingMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setUserMessage(e.target.value);
-  };
+const MessageInput = ({ userMessage, handleTypingMessage }: Props) => {
+  const { mutate } = useMutation(createChatApi);
 
   const handleSendMessage = () => {
     const requestData = {
@@ -18,7 +20,7 @@ const MessageInput = () => {
       messages: [{ role: 'user', content: userMessage }],
     };
 
-    createChatApi(requestData);
+    mutate(requestData);
   };
 
   return (
