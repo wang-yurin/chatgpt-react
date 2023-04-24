@@ -1,11 +1,18 @@
-import React from 'react';
+const layoutStyles = {
+  display: 'flex',
+  flex: '1 1 0%',
+  flexDirection: 'column',
+  height: '100%',
+  overFlow: 'hidden',
+  position: 'relative',
+};
 
-const contentStyle = {
+const contentStyles = {
   padding: '2rem',
 };
 
-const siderStyle = {
+const siderStyles = {
   padding: '1rem',
 };
 
-export { contentStyle, siderStyle };
+export { layoutStyles, contentStyles, siderStyles };
