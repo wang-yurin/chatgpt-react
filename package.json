@@ -15,6 +15,7 @@
     "dotenv": "^16.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.7",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
@@ -57,11 +58,14 @@
     "@emotion/types": "^0.7.0",
     "@emotion/utils": "^1.2.0",
     "@reduxjs/toolkit": "^1.9.5",
+    "@types/react-syntax-highlighter": "^15.5.6",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "latest",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "latest"
+    "eslint-plugin-react": "latest",
+    "react-syntax-highlighter": "^15.5.0",
+    "remark-gfm": "^3.0.1"
   }
 }
