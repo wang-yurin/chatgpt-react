@@ -3,6 +3,9 @@ import React from 'react';
 import styeld from '@emotion/styled';
 import { css } from '@emotion/react';
 import theme from '../../styles/theme';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import CodeBlock from './CodeBlock';
 
 interface ChatProps {
   message: {
@@ -30,7 +33,7 @@ const ChatType = styeld.div`
   margin-bottom: 1rem;
 `;
 
-const ChatContent = styeld.p`
+const ChatContent = styeld.div`
   font-size: 1.5rem
 `;
 
@@ -38,7 +41,14 @@ const Chat = ({ message, index }: ChatProps) => {
   return (
     <div css={chatStyle(message)} key={index}>
       <ChatType>{message?.role !== 'user' ? 'Bot' : 'You'}</ChatType>
-      <ChatContent>{message?.content}</ChatContent>
+      <ChatContent>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{ code: CodeBlock as React.ElementType }}
+        >
+          {message?.content}
+        </ReactMarkdown>
+      </ChatContent>
     </div>
   );
 };
