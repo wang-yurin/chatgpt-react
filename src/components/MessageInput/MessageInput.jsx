@@ -7,6 +7,16 @@ import { messageInputStyles, textareaStyles } from './MessageInput.styles';
 const { TextArea } = Input;
 
 const MessageInput = ({ value, handleTypingMessage, handleSendMessage }) => {
+  const handlePressEnter = (event) => {
+    if (event.keyCode === 13 && !event.shiftKey) {
+      event.preventDefault();
+
+      if (value) {
+        handleSendMessage();
+      }
+    }
+  };
+
   return (
     <Row align="bottom" css={messageInputStyles}>
       <Col flex={1}>
@@ -18,7 +28,7 @@ const MessageInput = ({ value, handleTypingMessage, handleSendMessage }) => {
           autoSize={{ minRows: 1, maxRows: 10 }}
           bordered={false}
           style={textareaStyles}
-          onPressEnter={handleSendMessage}
+          onPressEnter={handlePressEnter}
           placeholder="메시지를 입력하세요."
         />
       </Col>
