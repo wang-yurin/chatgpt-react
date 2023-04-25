@@ -22,9 +22,13 @@ const chatStyle = (message: any) => css`
   margin-bottom: 1rem;
   border-radius: 1rem;
 
-  background-color: ${message?.role !== 'user'
+  background-color: ${message?.role === 'user'
     ? theme.colors.GREY200
-    : theme.colors.GREY300};
+    : 'transparent'};
+
+  border: ${message?.role === 'user'
+    ? 'none'
+    : `1px solid ${theme.colors.GREY200}`};
 `;
 
 const ChatType = styeld.div`

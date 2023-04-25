@@ -65,8 +65,8 @@ const ChatPage = () => {
         <MessageInput
           message={message}
           value={userMessage}
-          onChange={handleTypingMessage}
-          onSend={handleSendMessage}
+          handleTypingMessage={handleTypingMessage}
+          handleSendMessage={handleSendMessage}
         />
         <Footer style={footerStyles}>
           <a href="https://github.com/wang-yurin" target="blank">

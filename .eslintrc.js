@@ -24,5 +24,6 @@ module.exports = {
         ignore: ['css'],
       },
     ],
+    'react/prop-types': 'off',
   },
 };

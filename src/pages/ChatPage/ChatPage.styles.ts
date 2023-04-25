@@ -12,10 +12,11 @@ const contentStyles = {
 
 const siderStyles = {
   padding: '1rem',
+  backgroundColor: theme.colors.GREY100,
 };
 
 const footerStyles = {
-  color: theme.colors.GREY500,
+  color: theme.colors.GREY400,
   textAlign: 'center',
   textDecoration: 'underline',
   backgroundColor: theme.colors.GREY200,
