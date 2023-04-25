@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Layout } from 'antd';
-import { contentStyles, layoutStyles, siderStyles } from './ChatPage.styles';
+import {
+  contentStyles,
+  footerStyles,
+  layoutStyles,
+  siderStyles,
+} from './ChatPage.styles';
 import { PlusOutlined } from '@ant-design/icons';
 import MessageInput from '../../components/MessageInput/MessageInput';
 import createChatApi from '../../api/createChat';
@@ -40,7 +45,7 @@ const ChatPage = () => {
   };
 
   return (
-    <Layout>
+    <Layout style={{ height: '100vh' }}>
       <Sider
         style={siderStyles}
         breakpoint="lg"
@@ -57,15 +62,17 @@ const ChatPage = () => {
             <Chat message={message} key={index} />
           ))}
         </Content>
-        <Content>
-          <MessageInput
-            message={message}
-            value={userMessage}
-            onChange={handleTypingMessage}
-            onSend={handleSendMessage}
-          />
-        </Content>
-        <Footer>footer</Footer>
+        <MessageInput
+          message={message}
+          value={userMessage}
+          onChange={handleTypingMessage}
+          onSend={handleSendMessage}
+        />
+        <Footer style={footerStyles}>
+          <a href="https://github.com/wang-yurin" target="blank">
+            GitHub
+          </a>
+        </Footer>
       </Layout>
     </Layout>
   );

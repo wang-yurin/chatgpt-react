@@ -1,13 +1,12 @@
+import theme from '../../styles/theme';
+
 const layoutStyles = {
   display: 'flex',
-  flex: '1 1 0%',
   flexDirection: 'column',
-  height: '100%',
-  overFlow: 'hidden',
-  position: 'relative',
 };
 
 const contentStyles = {
+  overflowY: 'scroll',
   padding: '2rem',
 };
 
@@ -15,4 +14,12 @@ const siderStyles = {
   padding: '1rem',
 };
 
-export { layoutStyles, contentStyles, siderStyles };
+const footerStyles = {
+  color: theme.colors.GREY500,
+  textAlign: 'center',
+  textDecoration: 'underline',
+  backgroundColor: theme.colors.GREY200,
+  padding: '1rem 0 2rem',
+};
+
+export { layoutStyles, contentStyles, siderStyles, footerStyles };

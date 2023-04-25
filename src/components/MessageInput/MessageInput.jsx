@@ -8,7 +8,7 @@ const { TextArea } = Input;
 
 const MessageInput = ({ value, onChange, onSend }) => {
   return (
-    <Row align="bottom" gutter={16} css={messageInputStyles}>
+    <Row align="bottom" css={messageInputStyles}>
       <Col flex={1}>
         <TextArea
           showCount
