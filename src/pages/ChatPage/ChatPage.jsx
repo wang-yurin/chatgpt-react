@@ -8,40 +8,23 @@ import {
 } from './ChatPage.styles';
 import { PlusOutlined } from '@ant-design/icons';
 import MessageInput from '../../components/MessageInput/MessageInput';
-import createChatApi from '../../api/createChat';
-import { useMutation } from 'react-query';
 import Chat from '../../components/Chat/Chat';
+import usePostMessage from '../../hooks/usePostMessage';
 
 const { Content, Footer, Sider } = Layout;
 
 const ChatPage = () => {
-  const { mutateAsync } = useMutation(createChatApi);
-
   const [message, setMessage] = useState([]);
   const [userMessage, setUserMessage] = useState('');
+  const postMessage = usePostMessage();
 
   const handleTypingMessage = (e) => {
     setUserMessage(e.target.value);
   };
 
   const handleSendMessage = async () => {
-    const newMessage = { role: 'user', content: userMessage };
-    const newMessageList = [...message, newMessage];
-
-    setMessage(newMessageList);
+    postMessage({ userMessage, message, setMessage });
     setUserMessage('');
-
-    const requestData = {
-      model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: userMessage }],
-    };
-
-    const responseData = await mutateAsync(requestData);
-
-    const newSystemMessage = responseData?.choices[0].message;
-    const newSystemMessageList = [...newMessageList, newSystemMessage];
-
-    setMessage(newSystemMessageList);
   };
 
   return (
@@ -58,9 +41,10 @@ const ChatPage = () => {
       </Sider>
       <Layout style={layoutStyles}>
         <Content style={contentStyles}>
-          {message.map((message, index) => (
-            <Chat message={message} key={index} />
-          ))}
+          {message &&
+            message.map((message, index) => (
+              <Chat message={message} key={index} />
+            ))}
         </Content>
         <MessageInput
           message={message}
