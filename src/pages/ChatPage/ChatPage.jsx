@@ -10,20 +10,22 @@ import { PlusOutlined } from '@ant-design/icons';
 import MessageInput from '../../components/MessageInput/MessageInput';
 import Chat from '../../components/Chat/Chat';
 import usePostMessage from '../../hooks/usePostMessage';
+import Spinner from '../../components/@common/Spinner/Spinner';
 
 const { Content, Footer, Sider } = Layout;
 
 const ChatPage = () => {
   const [message, setMessage] = useState([]);
   const [userMessage, setUserMessage] = useState('');
-  const postMessage = usePostMessage();
+  const [isLoading, setIsLoading] = useState(false);
+  const { postMessage } = usePostMessage();
 
   const handleTypingMessage = (e) => {
     setUserMessage(e.target.value);
   };
 
   const handleSendMessage = async () => {
-    postMessage({ userMessage, message, setMessage });
+    postMessage({ userMessage, message, setMessage, setIsLoading });
     setUserMessage('');
   };
 
@@ -46,6 +48,7 @@ const ChatPage = () => {
               <Chat message={message} key={index} />
             ))}
         </Content>
+        {isLoading && <Spinner />}
         <MessageInput
           message={message}
           value={userMessage}

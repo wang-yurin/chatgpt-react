@@ -4,11 +4,17 @@ import createChatApi from '../api/createChat';
 const usePostMessage = () => {
   const { mutate } = useMutation(createChatApi);
 
-  const postMessage = async ({ message, userMessage, setMessage }: any) => {
+  const postMessage = async ({
+    message,
+    userMessage,
+    setMessage,
+    setIsLoading,
+  }: any) => {
     const newMessage = { role: 'user', content: userMessage };
     const newMessageList = [...message, newMessage];
 
     setMessage(newMessageList);
+    setIsLoading(true);
 
     const requestData = {
       model: 'gpt-3.5-turbo',
@@ -21,13 +27,15 @@ const usePostMessage = () => {
         const newSystemMessageList = [...newMessageList, newSystemMessage];
 
         setMessage(newSystemMessageList);
+        setIsLoading(false);
       },
       onError: (error) => {
         console.error('Error:', error);
+        setIsLoading(false);
       },
     });
   };
-  return postMessage;
+  return { postMessage };
 };
 
 export default usePostMessage;
