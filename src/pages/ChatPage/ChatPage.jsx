@@ -8,14 +8,16 @@ import {
 } from './ChatPage.styles';
 import { PlusOutlined } from '@ant-design/icons';
 import MessageInput from '../../components/MessageInput/MessageInput';
-import Chat from '../../components/Chat/Chat';
 import usePostMessage from '../../hooks/usePostMessage';
 import Spinner from '../../components/@common/Spinner/Spinner';
+import ChatHistory from '../../components/ChatHistory/ChatHistory';
+import { useRecoilState } from 'recoil';
+import messageState from '../../recoil/atoms';
 
 const { Content, Footer, Sider } = Layout;
 
 const ChatPage = () => {
-  const [message, setMessage] = useState([]);
+  const [message, setMessage] = useRecoilState(messageState);
   const [userMessage, setUserMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { postMessage } = usePostMessage();
@@ -43,10 +45,7 @@ const ChatPage = () => {
       </Sider>
       <Layout style={layoutStyles}>
         <Content style={contentStyles}>
-          {message &&
-            message.map((message, index) => (
-              <Chat message={message} key={index} />
-            ))}
+          <ChatHistory />
         </Content>
         {isLoading && <Spinner />}
         <MessageInput

@@ -1,5 +1,6 @@
 import { useMutation } from 'react-query';
 import createChatApi from '../api/createChat';
+import { setMessagesHistory } from '../utils/storage';
 
 const usePostMessage = () => {
   const { mutate } = useMutation(createChatApi);
@@ -14,6 +15,7 @@ const usePostMessage = () => {
     const newMessageList = [...message, newMessage];
 
     setMessage(newMessageList);
+    setMessagesHistory(newMessageList);
     setIsLoading(true);
 
     const requestData = {
@@ -27,6 +29,7 @@ const usePostMessage = () => {
         const newSystemMessageList = [...newMessageList, newSystemMessage];
 
         setMessage(newSystemMessageList);
+        setMessagesHistory(newSystemMessageList);
         setIsLoading(false);
       },
       onError: (error) => {

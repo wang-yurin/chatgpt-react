@@ -1,14 +1,14 @@
 import React from 'react';
-import ChatHistoryItem from '../ChatHistoryItem/ChatHistoryItem';
+import Chat from '../Chat/Chat';
+import { getMessagesHistory } from '../../utils/storage';
 
-const ChatHistoryList = () => {
+const ChatHistory = () => {
+  const messages = JSON.parse(getMessagesHistory());
+
   return (
-    <>
-      <ChatHistoryItem text="localStoragelocalStoragelocalStorage" />
-      <ChatHistoryItem text="localStorage" />
-      <ChatHistoryItem text="localStorage" />
-    </>
+    messages &&
+    messages.map((message, index) => <Chat message={message} key={index} />)
   );
 };
 
-export default ChatHistoryList;
+export default ChatHistory;
