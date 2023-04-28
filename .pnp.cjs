@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.37"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["@types/react-syntax-highlighter", "npm:15.5.6"],\
+            ["@types/uuid", "npm:9.0.1"],\
             ["@typescript-eslint/eslint-plugin", "virtual:5d7489732cd6b1c35c2a57fd81b0ec94fbdd05c92242e7b95fe3c119b157c09f33bf735153a3cec0aed86cd90b96cab9e45f7943ac62f24faacdc93dd13f2fd8#npm:5.59.0"],\
             ["@typescript-eslint/parser", "virtual:5d7489732cd6b1c35c2a57fd81b0ec94fbdd05c92242e7b95fe3c119b157c09f33bf735153a3cec0aed86cd90b96cab9e45f7943ac62f24faacdc93dd13f2fd8#npm:5.59.0"],\
             ["antd", "virtual:5d7489732cd6b1c35c2a57fd81b0ec94fbdd05c92242e7b95fe3c119b157c09f33bf735153a3cec0aed86cd90b96cab9e45f7943ac62f24faacdc93dd13f2fd8#npm:5.4.2"],\
@@ -64,6 +65,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["recoil", "virtual:5d7489732cd6b1c35c2a57fd81b0ec94fbdd05c92242e7b95fe3c119b157c09f33bf735153a3cec0aed86cd90b96cab9e45f7943ac62f24faacdc93dd13f2fd8#npm:0.7.7"],\
             ["remark-gfm", "npm:3.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
+            ["uuid", "npm:9.0.0"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
           "linkType": "SOFT"\
@@ -5377,6 +5379,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/uuid", [\
+        ["npm:9.0.1", {\
+          "packageLocation": "./.yarn/cache/@types-uuid-npm-9.0.1-b44e45eb8a-c472b8a77c.zip/node_modules/@types/uuid/",\
+          "packageDependencies": [\
+            ["@types/uuid", "npm:9.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/ws", [\
         ["npm:8.5.4", {\
           "packageLocation": "./.yarn/cache/@types-ws-npm-8.5.4-c0237574ef-fefbad20d2.zip/node_modules/@types/ws/",\
@@ -7304,6 +7315,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.37"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["@types/react-syntax-highlighter", "npm:15.5.6"],\
+            ["@types/uuid", "npm:9.0.1"],\
             ["@typescript-eslint/eslint-plugin", "virtual:5d7489732cd6b1c35c2a57fd81b0ec94fbdd05c92242e7b95fe3c119b157c09f33bf735153a3cec0aed86cd90b96cab9e45f7943ac62f24faacdc93dd13f2fd8#npm:5.59.0"],\
             ["@typescript-eslint/parser", "virtual:5d7489732cd6b1c35c2a57fd81b0ec94fbdd05c92242e7b95fe3c119b157c09f33bf735153a3cec0aed86cd90b96cab9e45f7943ac62f24faacdc93dd13f2fd8#npm:5.59.0"],\
             ["antd", "virtual:5d7489732cd6b1c35c2a57fd81b0ec94fbdd05c92242e7b95fe3c119b157c09f33bf735153a3cec0aed86cd90b96cab9e45f7943ac62f24faacdc93dd13f2fd8#npm:5.4.2"],\
@@ -7323,6 +7335,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["recoil", "virtual:5d7489732cd6b1c35c2a57fd81b0ec94fbdd05c92242e7b95fe3c119b157c09f33bf735153a3cec0aed86cd90b96cab9e45f7943ac62f24faacdc93dd13f2fd8#npm:0.7.7"],\
             ["remark-gfm", "npm:3.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
+            ["uuid", "npm:9.0.0"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
           "linkType": "SOFT"\
@@ -20402,6 +20415,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/uuid-npm-8.3.2-eca0baba53-5575a8a75c.zip/node_modules/uuid/",\
           "packageDependencies": [\
             ["uuid", "npm:8.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:9.0.0", {\
+          "packageLocation": "./.yarn/cache/uuid-npm-9.0.0-46c41e3e43-8dd2c83c43.zip/node_modules/uuid/",\
+          "packageDependencies": [\
+            ["uuid", "npm:9.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
