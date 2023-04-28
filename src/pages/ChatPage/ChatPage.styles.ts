@@ -19,8 +19,7 @@ const footerStyles = {
   color: theme.colors.GREY400,
   textAlign: 'center',
   textDecoration: 'underline',
-  backgroundColor: theme.colors.GREY200,
-  padding: '1rem 0 2rem',
+  padding: '0 0 2rem',
 };
 
 export { layoutStyles, contentStyles, siderStyles, footerStyles };

@@ -8,7 +8,7 @@ import {
 } from './ChatPage.styles';
 import { PlusOutlined } from '@ant-design/icons';
 import MessageInput from '../../components/MessageInput/MessageInput';
-import Chat from '../../components/Chat/Chat';
+import Chat from '../../components/ChatItem/ChatItem';
 import usePostMessage from '../../hooks/usePostMessage';
 import Spinner from '../../components/@common/Spinner/Spinner';
 

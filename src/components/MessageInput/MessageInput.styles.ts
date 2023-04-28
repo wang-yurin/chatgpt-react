@@ -2,9 +2,8 @@ import { css } from '@emotion/react';
 import theme from '../../styles/theme';
 
 const messageInputStyles = css`
-  padding: 5rem 3rem;
+  padding: 3rem;
   border-top: 1px solid ${theme.colors.GREY300};
-  background-color: ${theme.colors.GREY200};
   font-size: 1.6rem;
 
   & > button {
@@ -13,9 +12,10 @@ const messageInputStyles = css`
 `;
 
 const textareaStyles = {
-  'background-color': theme.colors.GREY100,
+  backgroundColor: theme.colors.GREY200,
   border: 'none',
-  padding: '1.5rem',
+  padding: '1rem',
+  boxShadow: '1px 1px 7px 0px rgba(0, 0, 0, 0.2)',
 };
 
 export { messageInputStyles, textareaStyles };
