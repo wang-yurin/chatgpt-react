@@ -17,7 +17,12 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   const match = /language-(\w+)/.exec(className || '');
   // console.log(match);
   return !inline && match ? (
-    <SyntaxHighlighter language={match[1]} style={vscDarkPlus} PreTag="div">
+    <SyntaxHighlighter
+      {...props}
+      language={match[1]}
+      style={vscDarkPlus}
+      PreTag="div"
+    >
       {String(children).replace(/\n$/, '')}
     </SyntaxHighlighter>
   ) : (
