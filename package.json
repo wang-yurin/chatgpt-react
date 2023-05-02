@@ -67,8 +67,12 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "latest",
+    "msw": "^1.2.1",
     "react-syntax-highlighter": "^15.5.0",
     "remark-gfm": "^3.0.1",
     "uuid": "^9.0.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
